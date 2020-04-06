@@ -9,10 +9,10 @@ from datetime import timedelta
 
 # Variable setup
 station_mine = 'IWATERLO57'
-station_other = ['IONTARIO1036'] #'IKITCHEN15']#, 'IKITCHEN16', 'IWATERLO55', 'IONTARIO1036']
+station_other = ['IONTARIO734']# ['ICAMBRID183']# 'IKITCHEN16' 'IONTARIO734', 'IWOOLWIC7',  ['IONTARIO1036'] #'IKITCHEN15']#, 'IKITCHEN16', 'IWATERLO55', 'IONTARIO1036']
 start_datestring = '20190101'
 end_datestring = '20200101'
-API_KEY = 'f26b774167f54612ab774167f5761204'
+API_KEY = '6343f2a1cd104ac283f2a1cd10fac2b6'
 
 #Setup datetime obj
 start_datetime_obj = datetime.strptime(start_datestring, '%Y%m%d')
@@ -61,6 +61,8 @@ for station in station_other:
 	       'metric.windspeedHigh': np.nan, 'metric.windspeedLow': np.nan, 'obsTimeLocal': datestring,
 	       'obsTimeUtc': np.nan, 'qcStatus': -9999, 'solarRadiationHigh': np.nan, 'stationID': np.nan, 'tz': np.nan,
 	       'uvHigh': np.nan, 'winddirAvg': np.nan}], ignore_index = True)
+			first_pass = False
+
 
 	print("Saving dataframe to csv..")
 	main_df.to_csv(station + '_data.csv')
